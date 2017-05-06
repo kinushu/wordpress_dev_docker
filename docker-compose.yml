@@ -15,7 +15,3 @@ services:
     env_file: .env
     volumes:
     - ./db-data/datastore:/var/lib/mysql
-
-volumes:
-  db-data:
-    driver: local
