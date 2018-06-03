@@ -10,9 +10,16 @@ services:
       WORDPRESS_DB_HOST: "db:3306"
     env_file: .env
     volumes:
-    - ./themes/mytheme:/var/www/html/wp-content/themes/mytheme
+    - mytheme:/var/www/html/wp-content/themes/mytheme
   db:
     image: mysql:5.7
     env_file: .env
+    expose:
+    - 3306
     volumes:
-    - ./db-data/datastore:/var/lib/mysql
+    - db-data:/var/lib/mysql
+volumes:
+    db-data:
+         driver: local
+    mytheme:
+         driver: local

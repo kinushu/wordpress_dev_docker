@@ -9,6 +9,9 @@ docker-compose up
 
 ## アクセスURL
 
+for windows
+http://192.168.99.100:8080
+
 http://localhost:8080/
 
 ## 参考資料
