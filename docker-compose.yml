@@ -11,6 +11,7 @@ services:
     env_file: .env
     volumes:
     - ./themes/mytheme:/var/www/html/wp-content/themes/mytheme
+    - ./uploads:/var/www/html/wp-content/uploads
   db:
     image: mysql:5.7
     env_file: .env
