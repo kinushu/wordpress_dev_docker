@@ -12,9 +12,11 @@ services:
     volumes:
     - ./themes/mytheme:/var/www/html/wp-content/themes/mytheme
   db:
-    image: mysql:5.7
+#    image: mysql:5.7
+    build: ./db-data
     env_file: .env
     expose:
     - 3306
     volumes:
+#    - ./my.cnf:/etc/mysql/my.cnf
     - ./db-data/datastore:/var/lib/mysql
