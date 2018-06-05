@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   wordpress:
     image: wordpress:latest
@@ -10,16 +10,11 @@ services:
       WORDPRESS_DB_HOST: "db:3306"
     env_file: .env
     volumes:
-    - mytheme:/var/www/html/wp-content/themes/mytheme
+    - ./themes/mytheme:/var/www/html/wp-content/themes/mytheme
   db:
     image: mysql:5.7
     env_file: .env
     expose:
     - 3306
     volumes:
-    - db-data:/var/lib/mysql
-volumes:
-    db-data:
-         driver: local
-    mytheme:
-         driver: local
+    - ./db-data/datastore:/var/lib/mysql
