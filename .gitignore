@@ -3,3 +3,5 @@ db-data/datastore
 themes/*
 uploads/*
 tmp/*
+
+docker-compose.override.yml
